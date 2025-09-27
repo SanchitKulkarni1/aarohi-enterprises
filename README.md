@@ -1,2 +1,2 @@
 # aarohi-enterprises
-Website ofr Aarohi Enterprises
+Website for Aarohi Enterprises
