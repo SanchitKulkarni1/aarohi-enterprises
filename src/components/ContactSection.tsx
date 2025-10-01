@@ -113,9 +113,10 @@ const ContactSection = () => {
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-card-foreground">Office Address</h3>
                     <p className="text-muted-foreground">
-                      123 Industrial Park Drive<br/>
-                      Construction District<br/>
-                      Mumbai, Maharashtra 400001
+                      Aarohi Enterprises Bldg No:1, Shop No: 13<br/>
+                      Royal Garden, At & Post Kurgaon<br/>
+                      Tal & District: Palghar - 401502<br/>
+                      Maharashtra, India
                     </p>
                   </div>
                 </div>
@@ -133,7 +134,7 @@ const ContactSection = () => {
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-card-foreground">Contact Information</h3>
                     <p className="text-muted-foreground mb-2">
-                      Phone: +91 98765 43210
+                      Phone: +91 12345 67890
                     </p>
                     <p className="text-muted-foreground">
                       Email: info@aarohienterprises.com
@@ -155,8 +156,7 @@ const ContactSection = () => {
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-card-foreground">Business Hours</h3>
                     <p className="text-muted-foreground">
-                      Monday - Friday: 8:00 AM - 6:00 PM<br/>
-                      Saturday: 9:00 AM - 4:00 PM<br/>
+                      Monday - Saturday: 9:00 AM - 8:00 PM<br/>
                       Sunday: Emergency Services Only
                     </p>
                   </div>

@@ -22,9 +22,12 @@ const Header = () => {
             <a href="#why-choose-us" className="text-foreground hover:text-primary transition-colors font-medium">
               Why Choose Us
             </a>
+            <a href="/gallery" className="text-foreground hover:text-primary transition-colors font-medium">
+              Gallery
+            </a>
           </nav>
-          
-          <Button variant="default">
+
+          <Button variant="default" onClick={() => window.location.href="#contact"}>
             Contact Us
           </Button>
         </div>

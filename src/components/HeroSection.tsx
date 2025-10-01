@@ -26,11 +26,13 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-3">
+            <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-3"
+            onClick={() => window.location.href="#services"}>
               Our Services
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3">
-              Get Quote
+            <Button size="lg" variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-3"
+            onClick={() => window.open("https://maps.app.goo.gl/FApXB9EoEM1kHac46?g_st=ipc", "_blank", "noopener,noreferrer")}>
+              Find Us
             </Button>
           </div>
         </div>
