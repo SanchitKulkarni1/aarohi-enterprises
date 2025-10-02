@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Helmet } from "react-helmet-async";
 import droneVideo from "@/assets/drone.mp4";
 import machine1 from "../assets/machine1.jpeg"
 import office1 from "../assets/office1.jpeg";
@@ -88,6 +89,19 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Gallery | Aarohi Enterprises</title>
+        <meta
+          name="description"
+          content="Explore Aarohi Enterprises project gallery including operations, machinery, and site visuals. Watch a drone flyover and view our latest work."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Aarohi Enterprises Gallery" />
+        <meta property="og:description" content="A dynamic gallery of our latest projects and operations." />
+        <meta property="og:url" content="https://aarohienterprisesboisar.in/gallery" />
+        <meta property="og:image" content="/placeholder.svg" />
+        <link rel="canonical" href="https://aarohienterprisesboisar.in/gallery" />
+      </Helmet>
       <Header />
       <main id="gallery" className="container mx-auto px-6 pt-28 pb-16">
         <div className="mb-8 text-center">
