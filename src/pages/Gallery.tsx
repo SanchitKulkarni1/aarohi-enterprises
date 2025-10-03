@@ -3,12 +3,6 @@ import Footer from "@/components/Footer";
 import { useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Helmet } from "react-helmet-async";
-import droneVideo from "@/assets/drone.mp4";
-import machine1 from "../assets/machine1.jpeg"
-import office1 from "../assets/office1.jpeg";
-import office2 from "../assets/office2.jpeg";
-import operations from "../assets/operations1.jpeg";
-
 
 type BaseItem = {
   id: string;
@@ -23,26 +17,26 @@ type ImageItem = BaseItem & {
 
 type VideoItem = BaseItem & {
   type: "video";
-  src: string; // video src (mp4/webm)
-  poster?: string; // optional poster image
+  src: string;
+  poster?: string;
 };
 
 type GalleryItem = ImageItem | VideoItem;
 
 const STOCK_MEDIA: GalleryItem[] = [
-  { id: "1", type: "image", src: office1, alt: "Crane at construction site", category: "Offices" },
-  { id: "2", type: "image", src: office2, alt: "Skyscraper framework", category: "Offices" },
-  { id: "3", type: "image", src: operations, alt: "Crew with safety gear", category: "Machinery" },
-  { id: "4", type: "image", src: machine1, alt: "Heavy machinery", category: "Machinery" },
-  // Video hero source
+  { id: "1", type: "image", src: "/assets/office1.jpeg", alt: "Crane at construction site", category: "Offices" },
+  { id: "2", type: "image", src: "/assets/office2.jpeg", alt: "Skyscraper framework", category: "Offices" },
+  { id: "3", type: "image", src: "/assets/operations1.jpeg", alt: "Crew with safety gear", category: "Machinery" },
+  { id: "4", type: "image", src: "/assets/machine1.jpeg", alt: "Heavy machinery", category: "Machinery" },
   {
     id: "v1",
     type: "video",
-    src: droneVideo,
+    src: "/assets/drone.mp4",
     alt: "Drone flyover of site",
     category: "Videos",
   },
 ];
+
 const Gallery = () => {
   const images = useMemo(() => STOCK_MEDIA.filter((m) => m.type === "image") as ImageItem[], []);
   const duplicated = useMemo(() => [...images, ...images], [images]);
@@ -99,9 +93,12 @@ const Gallery = () => {
         <meta property="og:title" content="Aarohi Enterprises Gallery" />
         <meta property="og:description" content="A dynamic gallery of our latest projects and operations." />
         <meta property="og:url" content="https://aarohienterprisesboisar.in/gallery" />
-        <meta property="og:image" content="/placeholder.svg" />
+        {/* 👇 Using a real hosted image for previews */}
+        <meta property="og:image" content="https://aarohienterprisesboisar.in/assets/office1.jpeg" />
+        <meta property="og:image:alt" content="Aarohi Enterprises Office Project" />
         <link rel="canonical" href="https://aarohienterprisesboisar.in/gallery" />
       </Helmet>
+
       <Header />
       <main id="gallery" className="container mx-auto px-6 pt-28 pb-16">
         <div className="mb-8 text-center">
@@ -109,7 +106,7 @@ const Gallery = () => {
           <p className="mt-2 text-muted-foreground">A dynamic showcase of our latest work and operations.</p>
         </div>
 
-        <HeroVideo src={droneVideo} />
+        <HeroVideo src="/assets/drone.mp4" />
         <MarqueeStrip items={duplicated} />
 
         <style>
@@ -133,5 +130,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
-

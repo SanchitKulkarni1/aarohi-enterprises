@@ -1,5 +1,3 @@
-import safetyImage from "@/assets/safety-team.jpg";
-
 const features = [
   {
     title: "Unmatched Reliability",
@@ -24,25 +22,39 @@ const WhyChooseUsSection = () => {
     <section id="why-choose-us" className="py-20 bg-industrial-dark text-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Image */}
           <div>
             <img
-              src={safetyImage}
+              src="/assets/safety-team.jpg"
               alt="Professional construction safety team meeting"
               className="rounded-lg shadow-xl w-full h-[500px] object-cover"
             />
           </div>
-          
+
+          {/* Text Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               Why Choose <span className="text-accent">Aarohi Enterprises</span>
             </h2>
-            
+
             <div className="space-y-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20 6L9 17L4 12"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
                   <div>

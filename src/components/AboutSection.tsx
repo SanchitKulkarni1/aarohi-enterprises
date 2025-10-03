@@ -1,5 +1,3 @@
-import craneImage from "@/assets/crane-operations.jpg";
-
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 bg-secondary">
@@ -32,7 +30,7 @@ const AboutSection = () => {
           
           <div className="relative">
             <img
-              src={craneImage}
+              src="/crane-operations.jpg"
               alt="Professional crane operations at construction site"
               className="rounded-lg shadow-lg w-full h-[500px] object-cover"
             />
