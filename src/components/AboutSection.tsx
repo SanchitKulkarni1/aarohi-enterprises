@@ -30,7 +30,7 @@ const AboutSection = () => {
           
           <div className="relative">
             <img
-              src="/crane-operations.jpg"
+              src="/assets/crane-operations.jpg"
               alt="Professional crane operations at construction site"
               className="rounded-lg shadow-lg w-full h-[500px] object-cover"
             />
