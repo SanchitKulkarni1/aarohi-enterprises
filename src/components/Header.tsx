@@ -1,33 +1,86 @@
 import { Button } from "@/components/ui/button";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Check if we're on the home page
+  const isHomePage = location.pathname === "/";
+  
+  // Function to navigate to home page and scroll to section
+  const navigateToSection = (sectionId: string) => {
+    if (isHomePage) {
+      // If already on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If on another page, navigate to home and then scroll
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+  
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-primary">Aarohi Enterprises</h1>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/assets/aarohilogo.jpeg" 
+              alt="Aarohi Enterprises Logo" 
+              className="max-h-12 object-contain"
+            />
+            <Link to="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
+              Aarohi Enterprises
+            </Link>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">
+            <button 
+              onClick={() => navigateToSection('home')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
               Home
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection('about')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
               About
-            </a>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection('services')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
               Services
-            </a>
-            <a href="#why-choose-us" className="text-foreground hover:text-primary transition-colors font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection('why-choose-us')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
               Why Choose Us
-            </a>
-            <a href="/gallery" className="text-foreground hover:text-primary transition-colors font-medium">
+            </button>
+            <Link 
+              to="/gallery" 
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
               Gallery
-            </a>
+            </Link>
           </nav>
 
-          <Button variant="default" onClick={() => window.location.href="#contact"}>
+          <Button 
+            variant="default" 
+            onClick={() => navigateToSection('contact')}
+          >
             Contact Us
           </Button>
         </div>
