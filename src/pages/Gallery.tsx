@@ -41,9 +41,6 @@ const Gallery = () => {
   const images = useMemo(() => STOCK_MEDIA.filter((m) => m.type === "image") as ImageItem[], []);
   const duplicated = useMemo(() => [...images, ...images], [images]);
 
-  // Debug: Log the image sources
-  console.log('Gallery images:', images.map(img => img.src));
-  console.log('Duplicated images:', duplicated.map(img => img.src));
 
   const HeroVideo = ({ src }: { src: string }) => (
     <section className="mb-10">
@@ -136,20 +133,6 @@ const Gallery = () => {
 
         <HeroVideo src="/assets/drone.mp4" />
         <MarqueeStrip items={duplicated} />
-        
-        {/* Debug section - remove in production */}
-        <div className="mt-8 p-4 bg-muted rounded-lg">
-          <h3 className="text-sm font-semibold mb-2">Debug Info:</h3>
-          <p className="text-xs text-muted-foreground">Images count: {images.length}</p>
-          <p className="text-xs text-muted-foreground">Duplicated count: {duplicated.length}</p>
-          <div className="mt-2">
-            {images.map((img, i) => (
-              <div key={i} className="text-xs text-muted-foreground">
-                {i + 1}: {img.src}
-              </div>
-            ))}
-          </div>
-        </div>
 
         <style>
           {`
