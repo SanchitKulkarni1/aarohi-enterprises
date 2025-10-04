@@ -113,26 +113,28 @@ const Gallery = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Gallery | Aarohi Enterprises</title>
+        <title>Project Gallery | Aarohi Enterprises Boisar - Crane Operations & Construction</title>
         <meta
           name="description"
-          content="Explore Aarohi Enterprises project gallery including operations, machinery, and site visuals. Watch a drone flyover and view our latest work."
+          content="Explore Aarohi Enterprises Boisar project gallery showcasing crane operations, heavy machinery, construction projects, and industrial equipment in Boisar, Maharashtra."
         />
+        <meta name="keywords" content="Aarohi Enterprises Boisar gallery, crane operations gallery, construction projects Boisar, heavy machinery photos, industrial equipment Boisar, crane management projects Maharashtra" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Aarohi Enterprises Gallery" />
-        <meta property="og:description" content="A dynamic gallery of our latest projects and operations." />
+        <meta property="og:title" content="Project Gallery - Aarohi Enterprises Boisar" />
+        <meta property="og:description" content="Dynamic gallery showcasing our crane operations and construction projects in Boisar, Maharashtra." />
         <meta property="og:url" content="https://aarohienterprisesboisar.in/gallery" />
-        {/* 👇 Using a real hosted image for previews */}
         <meta property="og:image" content="https://aarohienterprisesboisar.in/assets/office1.jpeg" />
-        <meta property="og:image:alt" content="Aarohi Enterprises Office Project" />
+        <meta property="og:image:alt" content="Aarohi Enterprises Boisar Office Project" />
         <link rel="canonical" href="https://aarohienterprisesboisar.in/gallery" />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Boisar" />
       </Helmet>
 
       <Header />
       <main id="gallery" className="container mx-auto px-6 pt-28 pb-16">
         <div className="mb-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Project Gallery</h1>
-          <p className="mt-2 text-muted-foreground">A dynamic showcase of our latest work and operations.</p>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Project Gallery - Aarohi Enterprises Boisar</h1>
+          <p className="mt-2 text-muted-foreground">A dynamic showcase of our crane operations, heavy machinery, and construction projects in Boisar, Maharashtra.</p>
         </div>
 
         <HeroVideo src="/assets/drone.mp4" />

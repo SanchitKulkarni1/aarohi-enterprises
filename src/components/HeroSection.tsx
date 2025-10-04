@@ -17,15 +17,15 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Trusted Leader in
-            <span className="block text-accent"> Crane Management</span>
+            <span className="block text-accent"> Crane Management Boisar</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-white/90 font-medium">
-            Efficient. Reliable. Safe.
+            Efficient. Reliable. Safe Crane Operations.
           </p>
           
           <p className="text-lg md:text-xl mb-12 text-white/80 max-w-2xl mx-auto leading-relaxed">
-            Providing professional construction crane management services for large-scale infrastructure and industrial projects across the region.
+            Aarohi Enterprises Boisar provides professional construction crane management services, heavy machinery rentals, and industrial equipment solutions for large-scale infrastructure projects across Maharashtra.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -5,15 +5,15 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              About <span className="text-primary">Aarohi Enterprises</span>
+              About <span className="text-primary">Aarohi Enterprises Boisar</span>
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Aarohi Enterprises specializes in construction crane management, providing safe, efficient, and reliable crane operations for large-scale infrastructure and industrial projects.
+              Aarohi Enterprises Boisar specializes in professional construction crane management, heavy machinery rentals, and industrial equipment services. We provide safe, efficient, and reliable crane operations for large-scale infrastructure and industrial projects across Maharashtra.
             </p>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              With years of industry experience and a commitment to excellence, we deliver comprehensive crane management solutions that ensure your projects are completed safely, on time, and within budget.
+              With years of industry experience in Boisar and surrounding areas, we deliver comprehensive crane management solutions, construction services, and heavy machinery rentals that ensure your projects are completed safely, on time, and within budget.
             </p>
             
             <div className="grid grid-cols-2 gap-6">
@@ -31,7 +31,7 @@ const AboutSection = () => {
           <div className="relative">
             <img
               src="/assets/crane-operations.jpg"
-              alt="Professional crane operations at construction site"
+              alt="Aarohi Enterprises Boisar professional crane operations at construction site"
               className="rounded-lg shadow-lg w-full h-[500px] object-cover"
             />
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-accent rounded-full flex items-center justify-center">
