@@ -41,6 +41,10 @@ const Gallery = () => {
   const images = useMemo(() => STOCK_MEDIA.filter((m) => m.type === "image") as ImageItem[], []);
   const duplicated = useMemo(() => [...images, ...images], [images]);
 
+  // Debug: Log the image sources
+  console.log('Gallery images:', images.map(img => img.src));
+  console.log('Duplicated images:', duplicated.map(img => img.src));
+
   const HeroVideo = ({ src }: { src: string }) => (
     <section className="mb-10">
       <div className="relative w-full overflow-hidden rounded-xl border border-border bg-muted">
@@ -51,6 +55,16 @@ const Gallery = () => {
           loop
           playsInline
           className="w-full aspect-[16/9] object-cover"
+          onError={(e) => {
+            console.warn('Video failed to load:', e);
+            // Fallback to poster image if video fails
+            const video = e.target as HTMLVideoElement;
+            video.style.display = 'none';
+            const fallback = document.createElement('div');
+            fallback.className = 'w-full aspect-[16/9] bg-muted flex items-center justify-center text-muted-foreground';
+            fallback.textContent = 'Video unavailable';
+            video.parentNode?.appendChild(fallback);
+          }}
         />
       </div>
     </section>
@@ -59,15 +73,29 @@ const Gallery = () => {
   const ImageCard = ({ src, alt }: { src: string; alt: string }) => (
     <Card className="mr-4 w-48 sm:w-56 md:w-64 shrink-0 overflow-hidden rounded-xl border-border/60 shadow-sm">
       <CardContent className="p-0">
-        <img src={src} alt={alt} className="h-32 sm:h-36 md:h-40 w-full object-cover" loading="lazy" />
+        <img 
+          src={src} 
+          alt={alt} 
+          className="h-32 sm:h-36 md:h-40 w-full object-cover" 
+          loading="lazy"
+          onError={(e) => {
+            console.warn('Image failed to load:', src);
+            const img = e.target as HTMLImageElement;
+            img.style.display = 'none';
+            const fallback = document.createElement('div');
+            fallback.className = 'h-32 sm:h-36 md:h-40 w-full bg-muted flex items-center justify-center text-muted-foreground text-sm';
+            fallback.textContent = 'Image unavailable';
+            img.parentNode?.appendChild(fallback);
+          }}
+        />
       </CardContent>
     </Card>
   );
 
   const MarqueeStrip = ({ items }: { items: ImageItem[] }) => (
     <section className="group relative">
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
       <div className="marquee overflow-hidden">
         <div className="marquee-track flex w-[200%]" aria-hidden>
           {items.map((it) => (
@@ -108,6 +136,20 @@ const Gallery = () => {
 
         <HeroVideo src="/assets/drone.mp4" />
         <MarqueeStrip items={duplicated} />
+        
+        {/* Debug section - remove in production */}
+        <div className="mt-8 p-4 bg-muted rounded-lg">
+          <h3 className="text-sm font-semibold mb-2">Debug Info:</h3>
+          <p className="text-xs text-muted-foreground">Images count: {images.length}</p>
+          <p className="text-xs text-muted-foreground">Duplicated count: {duplicated.length}</p>
+          <div className="mt-2">
+            {images.map((img, i) => (
+              <div key={i} className="text-xs text-muted-foreground">
+                {i + 1}: {img.src}
+              </div>
+            ))}
+          </div>
+        </div>
 
         <style>
           {`
