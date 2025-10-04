@@ -69,20 +69,29 @@ const Header = () => {
             >
               Why Choose Us
             </button>
-            <Link 
-              to="/gallery" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Gallery
-            </Link>
           </nav>
 
-          <Button 
-            variant="default" 
-            onClick={() => navigateToSection('contact')}
-          >
-            Contact Us
-          </Button>
+          <div className="flex items-center space-x-3">
+            <Link 
+              to="/gallery" 
+              onClick={() => {
+                // Ensure we scroll to top when navigating to gallery
+                setTimeout(() => window.scrollTo(0, 0), 0);
+              }}
+            >
+              <Button 
+                variant="default"
+              >
+                Gallery
+              </Button>
+            </Link>
+            <Button 
+              variant="default" 
+              onClick={() => navigateToSection('contact')}
+            >
+              Contact Us
+            </Button>
+          </div>
         </div>
       </div>
     </header>
