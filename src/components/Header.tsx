@@ -71,7 +71,7 @@ const Header = () => {
             </button>
           </nav>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3 items-center">
             <Link 
               to="/gallery" 
               onClick={() => {
@@ -81,6 +81,7 @@ const Header = () => {
             >
               <Button 
                 variant="default"
+                className="w-full sm:w-auto"
               >
                 Gallery
               </Button>
@@ -88,6 +89,7 @@ const Header = () => {
             <Button 
               variant="default" 
               onClick={() => navigateToSection('contact')}
+              className="w-full sm:w-auto"
             >
               Contact Us
             </Button>
