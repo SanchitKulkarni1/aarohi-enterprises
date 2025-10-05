@@ -131,7 +131,7 @@ const Gallery = () => {
       </Helmet>
 
       <Header />
-      <main id="gallery" className="container mx-auto px-6 pt-28 pb-16">
+      <main id="gallery" className="container mx-auto px-6 pt-32 sm:pt-28 pb-16">
         <div className="mb-8 text-center">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Project Gallery - Aarohi Enterprises Boisar</h1>
           <p className="mt-2 text-muted-foreground">A dynamic showcase of our crane operations, heavy machinery, and construction projects in Boisar, Maharashtra.</p>

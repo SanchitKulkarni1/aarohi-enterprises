@@ -31,15 +31,15 @@ const Header = () => {
   
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <img 
               src="/assets/aarohilogo.jpeg" 
               alt="Aarohi Enterprises Logo" 
-              className="max-h-12 object-contain"
+              className="max-h-8 sm:max-h-12 object-contain"
             />
-            <Link to="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
+            <Link to="/" className="text-lg sm:text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
               Aarohi Enterprises
             </Link>
           </div>
@@ -71,7 +71,7 @@ const Header = () => {
             </button>
           </nav>
 
-          <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3 items-center">
+          <div className="flex flex-col space-y-1.5 sm:flex-row sm:space-y-0 sm:space-x-3 items-center">
             <Link 
               to="/gallery" 
               onClick={() => {
@@ -81,15 +81,17 @@ const Header = () => {
             >
               <Button 
                 variant="default"
-                className="w-full sm:w-auto"
+                size="sm"
+                className="w-full sm:w-auto sm:size-default"
               >
                 Gallery
               </Button>
             </Link>
             <Button 
               variant="default" 
+              size="sm"
               onClick={() => navigateToSection('contact')}
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto sm:size-default"
             >
               Contact Us
             </Button>
